@@ -1,0 +1,337 @@
+/*Es la misma página de css para todas las páginas index creadas*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bgprimary: #9f3647;
+    --bgsecundary: rgb(27, 24, 24);
+    --textcolor: black;
+    --subtextcolor: white
+}
+
+@keyframes Logo {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(2px, 5px); }
+    50% { transform: translate(5px, 0px); }
+    75% { transform: translate(2px, -5px); }
+    100% { transform: translate(0, 0); }
+}
+
+a {
+    text-decoration: none;
+    color: var(--textcolor);
+}
+
+body {
+    header{
+        background-color: var(--bgprimary);
+        color: var(--textcolor);
+        height: 10vh;
+    
+        nav{
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0,4rem;
+
+            .logo {
+                height: 60%;
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
+        
+                svg{
+                height: 1.5rem;
+                width: auto;}
+            }
+
+            .logo:hover {
+                animation-name: Logo;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;}
+        }
+    }
+
+    ul{
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    
+        li{
+            padding: 0.6rem 1rem;
+        }
+    
+        li:hover{
+            box-shadow: 0 0 20px rgb(24, 22, 22);
+            border-radius: 0.5rem;
+        }
+
+        li:last-child:hover{
+            background-color: white;
+
+        }
+    }
+
+}
+
+h1,h2,h3{
+    color: var(--subtextcolor);
+    text-align: center;
+}
+
+h1{
+    font-size:  2.4rem;
+}
+
+h3{
+    margin: 2rem;
+}
+
+main{
+    .principal{
+        height: 80vh;
+        background-image: url(../Assets/Images/backround-image.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: soft-light;
+        background-color: rgba(36, 33, 33, 0.836);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 5rem;
+    }
+
+    .buscadorPrincipal{
+        background-color: #181419;
+        color:rgb(255, 255, 255);
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .tituloSection{
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .buscadorPeliculas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+
+            .inputBuscador{
+                border: 2px solid white;
+                border-radius: 25px;
+                color: #000000;
+                font-size: 1.2rem;
+                height: 50px;
+                margin: 20px 0px;
+                outline: none;
+                padding: 0px 20px;
+                width: 500px;
+            }
+        }
+
+        .botonBuscador{
+            background-color:#9f3647;
+            display: inline-block;
+            color:#ffffff;
+            height: 50px;
+            margin: 20px 10px;
+            padding:0 20px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: 2px solid white;
+            text-align: center;
+            
+            /*Agregar efecto de botón presionado*/
+            
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                background-color: #9f3647;
+                transform: scale(0.95);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+
+
+    .BotonRegistro{
+        padding: 0.7rem;
+        background-color: var(--bgprimary);
+        border-radius: 0.4rem;
+    }
+    
+    .galeria{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minimax, 1rem, 1fr);
+        background-color: var(--bgsecundary);
+        
+        .containerPelis{
+            img{
+                width:200px;
+                height: 300px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+
+            img:hover{
+                backdrop-filter: blur(20px);
+                box-shadow: 0 0 30px #867f18cd;
+                transform: scale(0.9);
+                transition: all 1s ease;
+            }
+        }
+    }
+}
+
+.logueo{
+    height: 90vh;
+    background-image: url(../Assets/Images/cinema.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem;
+}
+
+.container{
+    width: 70%;
+    height: 90%;
+    background-color: var(--bgsecundary);
+    border-radius: 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.container2{
+    height: 28rem;
+    width: 28rem;
+    background-color: var(--bgsecundary);
+    border-radius: 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    input{
+        width: 20rem;
+        height: 2rem;
+        border-radius:2rem;
+        border: 2px solid var(--bgprimary);
+        padding-left: 0.6rem;
+    }
+
+    .iniciar{
+        background-color: var(--bgprimary);
+        color: var(--subtextcolor);
+        font-size:  1.1rem;
+    }
+    .iniciar:hover{
+        background-color: rgb(41, 170, 138);
+        color: var(--textcolor);
+        border: 0.3rem white solid;
+        font-size: 1.5rem;
+        height: 2.5rem;
+        transition: 2s;
+    }
+    .checkbox{
+        display: flex;
+        width: 3rem;
+        height: 1rem;
+        label{
+            margin-left: 10px;
+        }
+    }
+
+}
+
+.ayuda{
+    color: rgb(92, 90, 90);
+}
+
+
+.footer{
+    background-color:#9f3647;
+    color:#ffffff;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .listaNav{
+        list-style: none;
+        display: flex;
+        align-items: center;
+
+        .listaItem{
+            margin-left:20px;
+
+            .linkNav{
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+
+            .administradorPeliculas{
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .flechaArriba{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        width: 90px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+    .header{
+        width: 90px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+
+    .footer{
+        width: 90px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
