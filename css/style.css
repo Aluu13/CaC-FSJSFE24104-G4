@@ -1,18 +1,20 @@
-/*Es la misma página de css para todas las páginas index creadas*/
+/*Es la misma página de CSS para todas las páginas HTML creadas*/
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+/*La etiqueta abajo de este comentario es un selector que permite manejar el nodo principal del documento*/
+:root {
     --bgprimary: #9f3647;
     --bgsecundary: rgb(27, 24, 24);
     --textcolor: black;
     --subtextcolor: white
 }
 
+/*CSS del logo*/
 @keyframes Logo {
     0% { transform: translate(0, 0); }
     25% { transform: translate(2px, 5px); }
@@ -21,18 +23,25 @@
     100% { transform: translate(0, 0); }
 }
 
+/*CSS de los botones*/
 a {
     text-decoration: none;
-    color: var(--textcolor);
+    color: black;
+    cursor: pointer;
 }
 
+a:hover {
+    color: purple;
+}
+
+/*CSS del body de la home*/
 body {
-    header{
+    header {
         background-color: var(--bgprimary);
         color: var(--textcolor);
         height: 10vh;
     
-        nav{
+        nav {
             height: 100%;
             display: flex;
             justify-content: space-between;
@@ -45,57 +54,67 @@ body {
                 align-items: center;
                 gap: 0.2rem;
         
-                svg{
-                height: 1.5rem;
-                width: auto;}
+                svg {
+                    height: 1.5rem;
+                    width: auto;
+                }
             }
 
             .logo:hover {
                 animation-name: Logo;
                 animation-duration: 2s;
                 animation-timing-function: linear;
-                animation-iteration-count: infinite;}
+                animation-iteration-count: infinite;
+            }
         }
     }
 
-    ul{
+    ul {
         list-style: none;
         display: flex;
         gap: 1.5rem;
     
-        li{
+        li {
             padding: 0.6rem 1rem;
         }
     
-        li:hover{
+        li:hover {
             box-shadow: 0 0 20px rgb(24, 22, 22);
             border-radius: 0.5rem;
         }
 
-        li:last-child:hover{
-            background-color: white;
-
+        li:last-child:hover {
+            background-color: grey;
         }
     }
-
 }
 
-h1,h2,h3{
+/*CSS de los títulos de todas las páginas HTML*/
+h1, h2, h3 {
     color: var(--subtextcolor);
     text-align: center;
 }
 
-h1{
+h1 {
     font-size:  2.4rem;
 }
 
-h3{
+h3, h2 {
     margin: 2rem;
 }
 
-main{
-    .principal{
-        height: 80vh;
+.titulo {
+    font-size: 3.5rem;
+}
+
+.Subtitulo {
+    font-size: 2.5rem;
+}
+
+/*CSS del destacado y del buscador de películas*/
+main {
+    .principal {
+        height: 85vh;
         background-image: url(../Assets/Images/backround-image.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -109,28 +128,28 @@ main{
         padding: 5rem;
     }
 
-    .buscadorPrincipal{
+    .buscadorPrincipal {
         background-color: #181419;
         color:rgb(255, 255, 255);
-        height: 50vh;
+        height: 55vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         
-        .tituloSection{
+        .tituloSection {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .buscadorPeliculas{
+        .buscadorPeliculas {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 1rem;
 
-            .inputBuscador{
+            .inputBuscador {
                 border: 2px solid white;
                 border-radius: 25px;
                 color: #000000;
@@ -143,7 +162,7 @@ main{
             }
         }
 
-        .botonBuscador{
+        .botonBuscador {
             background-color:#9f3647;
             display: inline-block;
             color:#ffffff;
@@ -155,13 +174,10 @@ main{
             font-weight: 700;
             border: 2px solid white;
             text-align: center;
-            
-            /*Agregar efecto de botón presionado*/
-            
             transition: transform 0.3s, box-shadow 0.3s;
 
             &:hover {
-                background-color: #9f3647;
+                color: purple;
                 transform: scale(0.95);
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             }
@@ -169,19 +185,25 @@ main{
     }
 
 
-    .BotonRegistro{
+    .BotonRegistro {
         padding: 0.7rem;
         background-color: var(--bgprimary);
         border-radius: 0.4rem;
     }
-    
-    .galeria{
+
+    .BotonRegistro:hover {
+        transform: scale(0.95);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    /*CSS del muestrario de películas*/
+    .galeria {
         display: grid;
         grid-template-columns: repeat(auto-fit, minimax, 1rem, 1fr);
         background-color: var(--bgsecundary);
         
-        .containerPelis{
-            img{
+        .containerPelis {
+            img {
                 width:200px;
                 height: 300px;
                 position: relative;
@@ -189,9 +211,9 @@ main{
                 border-radius: 10px;
             }
 
-            img:hover{
+            img:hover {
                 backdrop-filter: blur(20px);
-                box-shadow: 0 0 30px #867f18cd;
+                box-shadow: 0 0 30px purple;
                 transform: scale(0.9);
                 transition: all 1s ease;
             }
@@ -199,17 +221,22 @@ main{
     }
 }
 
-.logueo{
-    height: 90vh;
+/*CSS de la página de inicio de sesión*/
+.logueo {
+    height: 150vh;
     background-image: url(../Assets/Images/cinema.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 4rem;
+
+    &:hover{
+        animation: tilt-n-move-shaking 0.25s infinite;
+    }
 }
 
-.container{
-    width: 70%;
-    height: 90%;
+.container {
+    width: 28rem;
+    height: 28rem;
     background-color: var(--bgsecundary);
     border-radius: 1rem;
     margin: 0 auto;
@@ -220,8 +247,9 @@ main{
     gap: 1rem;
 }
 
-.container2{
-    height: 28rem;
+/*CSS de la página de registro*/
+.container2 {
+    height: 45rem;
     width: 28rem;
     background-color: var(--bgsecundary);
     border-radius: 1rem;
@@ -230,15 +258,19 @@ main{
     flex-direction: column;  
     align-items: center;
     justify-content: center;
-    gap: 1rem;
 }
 
-form{
+/*CSS que aplica para el formulario de ambas páginas (inicio de sesión y registro)*/
+.ayuda {
+    color: rgb(92, 90, 90);
+}
+
+form {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
 
-    input{
+    input {
         width: 20rem;
         height: 2rem;
         border-radius:2rem;
@@ -246,36 +278,49 @@ form{
         padding-left: 0.6rem;
     }
 
-    .iniciar{
+    .iniciar {
         background-color: var(--bgprimary);
         color: var(--subtextcolor);
         font-size:  1.1rem;
     }
-    .iniciar:hover{
-        background-color: rgb(41, 170, 138);
+
+    .iniciar:hover {
+        background-color: purple;
         color: var(--textcolor);
         border: 0.3rem white solid;
         font-size: 1.5rem;
         height: 2.5rem;
-        transition: 2s;
     }
-    .checkbox{
+
+    .textoCheck {
+        color: white;
+    }
+
+    .checkbox {
         display: flex;
         width: 3rem;
         height: 1rem;
+
         label{
             margin-left: 10px;
         }
     }
 
+    /*CSS de cuando "salta" el error*/
+    .error input:not(.check,.boton),.error select{
+        border: 1px solid #ff0000;
+    }
+
+    .error-text{
+        color: #ff0000;
+        font-size: 0.8rem;
+        margin-top:0px;
+        margin-bottom: 10px;
+    }
 }
 
-.ayuda{
-    color: rgb(92, 90, 90);
-}
-
-
-.footer{
+/*CSS del footer aplicado a todas las páginas*/
+.footer {
     background-color:#9f3647;
     color:#ffffff;
     height: 15vh;
@@ -283,28 +328,28 @@ form{
     justify-content: center;
     align-items: center;
 
-    .listaNav{
+    .listaNav {
         list-style: none;
         display: flex;
         align-items: center;
 
-        .listaItem{
+        .listaItem {
             margin-left:20px;
 
-            .linkNav{
+            .linkNav {
                 text-decoration: none;
                 font-weight: 700;
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
 
-            .administradorPeliculas{
+            .administradorPeliculas {
                 padding: 0.5rem 1rem;
                 border-radius: 5px;
             }
         }
     }
 
-    .flechaArriba{
+    .flechaArriba {
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -313,6 +358,7 @@ form{
     }
 }
 
+/*CSS responsive*/
 @media screen and (max-width:768px) {
     body {
         width: 90px;
@@ -321,14 +367,14 @@ form{
         padding: 35px 0px;
     }
 
-    .header{
+    .header {
         width: 90px;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 30px;
         padding: 35px 0px;
     }
 
-    .footer{
+    .footer {
         width: 90px;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 30px;
