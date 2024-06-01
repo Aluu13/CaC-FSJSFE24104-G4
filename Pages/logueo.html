@@ -1,35 +1,67 @@
 <!DOCTYPE html> <!--Este es el formulario de inicio de sesión-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAC-Movies</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" href="./Assets/Images/PhFilmSlateDuotone.webp" type="image/x-icon"/>
-</head>
-<body>
-    <header class="header">
-        <nav>
-            <a href="../index.html" class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 512 512"><path fill="#000000" d="M136 488h359.985V24H16v464zM408 56h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408ZM136 200V56h239.985v184H136Zm0 216V272h239.985v184H136ZM48 56h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Z"/></svg>
-                <span>Cac-Movies</span>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar sesión|CAC-Movies</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="shortcut icon" href="./Assets/Images/PhFilmSlateDuotone.webp" type="image/x-icon"/>
+    </head>
+    <body>
+        <!--Inicio del header-->
+        <header class="header" id="header">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 512 512"><path fill="#000000" d="M136 488h359.985V24H16v464zM408 56h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408Zm0 72h55.985v40H408ZM136 200V56h239.985v184H136Zm0 216V272h239.985v184H136ZM48 56h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Zm0 72h56v40H48Z"/></svg>
+                    <span>Cac-Movies</span>
+                </a>
+                <ul class="menuPrincipal">
+                    <li><a href="../index.html">Tendencias</a></li>
+                    <li><a href="../Pages/api.html">API</a></li>
+                    <li><a href="../Pages/registro.html">Registrarse</a></li>
+                    <li><a href="../Pages/logueo.html">Iniciar sesión</a></li>
+                </ul>            
+            </nav>
+        </header>
+        <!--Cierre del header-->
+
+        <!--Inicio del formulario de inicio de sesión-->
+        <main class="logueo">
+            <div class="container">
+                <h2>Iniciar Sesion</h2>
+                <form action="" id="form">
+                    <input type="email" placeholder="Email" id="email" name="email">
+                    <div id="error-email" class="error-text"></div>
+
+                    <input type="password" placeholder="Contraseña" id="password" name="password">
+                    <div id="error-password" class="error-text"></div>
+                    <br>
+                    <input class="iniciar" type="submit" value="Iniciar Sesion">
+                </form>
+                <br>
+                <a class="ayuda" href="./registro.html">Registrarse</a>
+            </div>
+        </main>
+        <!--Cierre del formulario de inicio de sesión-->
+
+        <!--Abajo de este comentario está el enlace JavaScript-->
+        <script src="./logueovalidosimple.js"></script>
+
+        <!--Inicio del footer-->
+        <footer class="footer">
+            <nav class="navegacion">
+                <ul class="listaNav">
+                    <li class="listaItem"><a class="linkNav" href="">Términos y condiciones</a></li>
+                    <li class="listaItem"><a class="linkNav" href="">Preguntas frecuentes</a></li>
+                    <li class="listaItem"><a class="linkNav" href="">Ayuda</a></li>
+                    <li class="listaItem"><a class="linkNav administradorPeliculas" href="">Administrador Peliculas</a></li>
+                </ul>
+            </nav>
+            <a href="#header" class="flechaArriba">
+                <img src="../Assets/Images/flecha-hacia-arriba.png" alt="ir arriba flecha">
             </a>
-            <ul class="menuPrincipal">
-                <li><a href="#Tendencias">Tendencias</a></li>
-                <li><a href="../Pages/registro.html">Registrarse</a></li>
-                <li><a href="../Pages/logueo.html">Iniciar sesión</a></li>
-            </ul>            
-        </nav>
-    </header>
-    <main class="logueo">
-        <div class="container">
-            <h3>Iniciar Sesion</h3>
-            <form action="">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
-                <input class="iniciar" type="submit" value="Iniciar Sesion">
-            </form>
-            <a href="./logueo.html">Registrarse</a>
-        </div>
-    </main>
-</body>
+        </footer>
+        <!--Cierre del footer-->
+
+    </body>
+</html>
